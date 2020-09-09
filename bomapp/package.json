@@ -2,18 +2,23 @@
   "name": "bomapp",
   "version": "1.0.0",
   "description": "backoffice for Masyanya Shop app",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VoldemLive/bomapp.git"
+    "url": "https://github.com/VoldemLive/bomapp.git"
   },
   "author": "Volodymyr Shynkarov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VoldemLive/bomapp/issues"
   },
-  "homepage": "https://github.com/VoldemLive/bomapp#readme"
+  "homepage": "https://github.com/VoldemLive/bomapp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^7.19.1",
+    "npm": "^6.14.8"
+  }
 }
