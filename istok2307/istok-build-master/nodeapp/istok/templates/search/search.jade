@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href="/css/semantic.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/jquery.fancybox.min.css")
+    script(src="/js/jquery.min.js")
+    script(src="/js/livesearch.js")
+    script(src="/js/shared/jquery.fancybox.min.js")
+    script(src="/js/login/auth.js")
+    script(src="/css/semantic.min.js")
+    script(src="/js/search/search.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+  body
+  div.ui.container
+    div.field
+      include header.jade
+      div.container
+        include ../shared/livesearch.jade
+        div.messageholder
+        include filters.jade
+        include detailedsearch.jade
+        div#itemsList.field
+            div#itemsCardHolder.ui.four.stackable.doubling.cards
+        include filters.jade

@@ -13,7 +13,7 @@ Item _$ItemFromJson(Map<String, dynamic> json) {
     ourname: json['ourname'] as String,
     ourarticul: json['ourarticul'] as String,
     cnarticul: json['cnarticul'] as String,
-    brand: json['brand'] as String,
+    brand: json['brand'] as int,
     category: (json['category'] as List)?.map((e) => e as String)?.toList(),
     images: (json['images'] as List)?.map((e) => e as String)?.toList(),
     properties: (json['properties'] as List)?.map((e) => e as String)?.toList(),

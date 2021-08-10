@@ -1,0 +1,31 @@
+- var weEdit = isEditing
+
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href="/css/semantic.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/jqtree.css")
+    link(rel="icon", href="../favicon.ico",type="image/x-icon")
+    script(src="/js/jquery.min.js")
+    script(src="/js/login/auth.js")
+    script(src="/js/livesearch.js")
+    script(src="/css/semantic.min.js")
+    script(src="/js/uploadimg.js")
+    script(src="/js/object-watch.js")
+    script(src="/js/additem/barcoder.js")
+    script(src="/js/additem/additem.js")
+    script(src="/js/categories/tree.jquery.js")
+    script(src="/js/categories/chooseCategories.js")
+    script(src="/js/properties/chooseProperties.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+  body
+
+  div#modalHolder
+  div.ui.container
+    include header.jade
+    include ../shared/livesearch.jade
+    if(weEdit == "false")
+      include additem.jade
+    else
+      include editItem.jade

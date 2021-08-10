@@ -9,7 +9,7 @@ class Item {
   final String ourname;
   final String ourarticul;
   final String cnarticul;
-  final String brand;
+  final int brand;
   final List<String> category;
   final List<String> images;
   final List<String> properties;
@@ -28,4 +28,12 @@ class Item {
       this.priceoutuah});
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
   Map<String, dynamic> toJson() => _$ItemToJson(this);
+}
+
+class ItemResponse {
+  final Item item;
+  final String barcode;
+  final String status;
+  //status code: 0 - good, 1 - not found, 2 - server error, 3 - server not avaliable
+  ItemResponse({this.item, this.barcode, this.status});
 }

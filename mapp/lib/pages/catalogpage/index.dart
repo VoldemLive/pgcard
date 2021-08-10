@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mapp/data/providers/categorydata.dart' as categoryprovider;
+import 'package:IdToy/data/providers/categorydata.dart' as categoryprovider;
 
 class CatalogPage extends StatefulWidget {
   _CatalogPageState createState() => _CatalogPageState();

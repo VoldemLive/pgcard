@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href="/css/semantic.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/cashdesk.css")
+    link(rel="stylesheet", href="/css/jquery.fancybox.min.css")
+
+    script(src="/js/jquery.min.js")
+    script(src="/js/guests/exif.js")
+    script(src="/js/guests/DecoderWorker.js")
+    script(src="/js/guests/BarcodeReader.js")
+    script(src="/js/shared/jquery.fancybox.min.js")
+    script(src="/css/semantic.min.js")
+    script(src="/js/guests/cashdesk.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+  body
+
+  div.ui.modal
+    div.header Проблема
+    div.image.content
+      div.description
+        div#problemHeade.ui.header
+        p#problemDescription
+    div.actions
+      div.ui.positive.right.labeled.icon.button Зрозуміло
+        i.checkmark.icon
+
+  div.ui.bottom.vertical.inverted.sidebar.menu
+    a.item
+      div.ui.input.big
+        input#articulOrBarcode(type="text" placeholder="введіть артикул або штрихкод")
+      button#buttonSearchByArt.orange.fluid.ui.right.labeled.icon.button Пошук
+        i.search.arrow.icon
+    a.item
+      button#buttonSearchByPhoto.big.green.fluid.ui.right.labeled.icon.button Пошук по фото штрихкоду
+        i.search.arrow.icon
+  div#itemsHolder.pusher
+    div#loadingDim.ui.active.inverted.dimmer
+      div.ui.text.big.loader.grey
+    input#barcodeImage(type="file" accept="image/*;capture=camera" hidden)
+    div.ui.container
+      h2#headerCashDesk.grey.center.aligned.ui.medium.header ІДЕНТИФІКАТОР ІГРАШКИ
+      div#itemsCardHolder.ui.one.stackable.cards
+      button#getItemByData.green.ui.button Ідентифікувати

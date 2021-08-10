@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href="/css/semantic.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    script(src="/js/jquery.min.js")
+    script(src="/css/semantic.min.js")
+    script(src="/js/uploadimg.js")
+    script(src="/js/brands/addbrand.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+  body
+  include ../shared/auth.jade
+  div.ui.container
+    include header.jade
+    include ../shared/livesearch.jade
+    h4.ui.dividing.header створення нового бренда
+    div.ui.two.column.grid.stackable
+      div.column
+          label Назва бренду
+          div.ui.left.icon.input.middle.aligned.fluid
+            i.registered.icon
+            input.brandName(type="text" placeholder="Назва бренду")
+      div.column
+          label Вкажіть логотип бренду
+          div.ui.left.icon.input.middle.aligned.fluid
+            i.file.image.icon
+            div#imageContainer
+btn#submitBrand.ui.circular.twitter.icon.button.middle.green Створити
+  i.twitter.icon

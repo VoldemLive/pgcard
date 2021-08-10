@@ -1,5 +1,5 @@
-name: mapp
-description: A new Flutter project.
+name: IdToy
+description: Програма для ідентифікації іграшки за її штрихкодом.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -25,7 +25,16 @@ dependencies:
     sdk: flutter
   animated_splash_screen: ^1.0.0+1
   http: ^0.12.2
-  json_serializable: ^3.3.0 
+  json_serializable: ^3.3.0
+  permission_handler: ^5.0.1+1
+  cached_network_image: ^2.3.3
+  carousel_slider: ^2.3.1
+  pinch_zoom_image_last: ^0.3.2
+  flutter_barcode_scanner: ^1.0.1
+  confetti: ^0.5.4+1
+  flutter_svg: ^0.19.1
+  firebase_analytics: ^6.2.0
+  flutter_launcher_icons: "^0.8.0"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -36,6 +45,15 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^1.10.2
+
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "lib/media/icon.png"
+  image_path_android: "lib/media/icon.png"
+  adaptive_icon_background: "lib/media/icon/background.png"
+  adaptive_icon_foreground: "lib/media/icon/foreground.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -51,6 +69,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/media/mlogo.png
+    - lib/media/tutor/01.svg
+    - lib/media/tutor/02.svg
+    - lib/media/tutor/03.svg
+    - lib/media/id_toy.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

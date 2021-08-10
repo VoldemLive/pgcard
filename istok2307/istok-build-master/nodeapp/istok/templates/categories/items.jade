@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href="/css/semantic.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/jqtree.css")
+    script(src="/js/jquery.min.js")
+    script(src="/js/login/auth.js")
+    script(src="/css/semantic.min.js")
+    script(src="/js/categories/categories.js")
+    script(src="/js/categories/tree.jquery.js")
+    script(src="/js/uploadimg.js")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+  body
+  div#modalHolder
+  div.ui.container
+    div.field
+      include header.jade
+      div.container
+        h4.ui.dividing.header Керування категоріями
+        div#categoriesHolder.ui.styled.fluid.accordion
+        div#createCategory.ui.submit.rightFloatButton.ui.circular.ui.icon.button.green.massive
+          i.icon.add

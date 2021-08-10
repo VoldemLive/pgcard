@@ -1,0 +1,133 @@
+form#updateItemForm.ui.form
+  div.field
+    h4.ui.dividing.header Редагування товару
+    div.field
+      label Код та назва товару
+      div.three.fields
+        div.field
+          div#allCodeHolder.ui.left.labeled.input
+            div#precode.ui.dropdown.scrolling.label.outlined
+              div.text Нем
+              i.dropdown.icon
+              div.menu
+                div.item Нем
+                div.item Збр
+                div.item Зві
+                div.item Дів
+                div.item Хло
+                div.item Кнц
+                div.item Кон
+                div.item Лял
+                div.item Мяк
+                div.item Мяч
+                div.item Маш
+                div.item Муз
+                div.item Нас
+                div.item Укр
+                div.item Паз
+                div.item Пол
+                div.item Різ
+                div.item Вел
+                div.item Тех
+                div.item Дер
+            input#codenumber(type="text" name="codenumber" placeholder="Код" maxlength=4)
+        div.field: div.ui.left.icon.input
+          i.tag.icon
+          input#articul(type="text" name="articul" placeholder="Артикул" maxlength=50)
+        div.field: div.ui.left.icon.input
+          input#barcode(type="text" name="barcode" placeholder="Штрих код" maxlength=13)
+          i#generateBarcode.barcode.link.icon
+      div.field: div.ui.left.icon.input
+          i.user.icon
+          input#itemname(type="text" name="itemname" placeholder="Назва товару")
+      div.field: textarea#description(rows="3" name="description" placeholder="Опис товару")
+      div.field
+        label Розмір
+        div.fields
+          div.seven.wide.field: div.ui.right.labeled.left.icon.input
+            i.expand.arrows.alternate.icon
+            input#itemlength(type="text" name="itemlength" placeholder="Вкажіть довжину")
+            div.ui.basic.label см
+          div.seven.wide.field: div.ui.right.labeled.left.icon.input
+            i.expand.arrows.alternate.icon
+            input#itemwidth(type="text" name="itemwidth" placeholder="Вкажіть ширину")
+            div.ui.basic.label см
+          div.seven.wide.field: div.ui.right.labeled.left.icon.input
+            i.expand.arrows.alternate.icon
+            input#itemheight(type="text" name="itemheight" placeholder="Вкажіть висоту")
+            div.ui.basic.label см
+          div.one.wide.field: button.medium.ui.icon.button#convertToCbm
+              i.right.arrow.icon
+          div.seven.wide.field: div.ui.right.labeled.left.icon.input
+            i.expand.arrows.alternate.icon
+            input#itemcbm(type="text" name="itemcbm" placeholder="Вкажіть об`єм")
+            div.ui.basic.label м3
+      div.field
+        label Додаткова інформація
+        div.two.fields
+          div.field: div.ui.right.labeled.left.icon.input
+            i.box.icon
+            input#itemquantityinbox(type="text" name="itemquantityinbox" placeholder="Кількість в ящику")
+            div.ui.basic.label шт
+          div.field
+            div#brands.ui.scrolling.dropdown.fluid.selection(draggable='false')
+              input(type="hidden" name="brand")
+              i.dropdown.icon
+              div.default.text Вкажіть виробника
+              div.menu
+      div.field
+        label Ціни в доларі
+        div.three.fields
+          div.field: div.ui.left.labeled.input
+            label.ui.label $
+            input#itempricechinausd(type="text" name="itempricechinausd" placeholder="Ціна на заводі")
+          div.field: div.ui.left.labeled.input
+            label.ui.label $
+            input#itempriceinusd(type="text" name="itempriceinusd" placeholder="Закупівельна в доларі")
+          div.field: div.ui.left.labeled.input
+            label.ui.label $
+            input#itempriceoutusd(type="text" name="itempriceoutusd" placeholder="Роздрібна в доларі")
+      div.field
+        label Ціни в гривні
+        div.three.fields
+          div.field: div.ui.left.labeled.input
+            label.ui.label грн.
+            input#itempriceinuah(type="text" name="itempriceinuah" placeholder="Закупівельна в гривні")
+          div.field: div.ui.left.labeled.input
+            label.ui.label грн.
+            input#itempricemiddleuah(type="text" name="itempricemiddleuah" placeholder="Гуртова в гривні")
+          div.field: div.ui.left.labeled.input
+            label.ui.label грн.
+            input#itempriceoutuah(type="text" name="itempriceoutuah" placeholder="Роздрібна в гривні")
+      div.field
+        div.ui.two.column.stackable.grid
+          div.column
+            div.field: div.ui.left.icon.input
+              i.folder.open.icon
+              div#selectCategory.ui.fluid.button.green Вибрати категорії
+            div.field#categoriesDropDown.ui.dropdown.scrolling.multiple.fluid.selection(draggable='false')
+              input(type="hidden" name="colors")
+              i.dropdown.icon
+              div.default.text Вкажіть категорію
+              div.menu
+          div.column
+            div.field: div.ui.left.icon.input
+              i.folder.open.icon
+              div#selectProperties.ui.fluid.button.green Вибрати властивості
+            div.field#propertiesDropDown.ui.dropdown.scrolling.multiple.fluid.selection(draggable='false')
+              input(type="hidden" name="colors")
+              i.dropdown.icon
+              div.default.text Вкажіть властивості товару
+              div.menu
+      div.field
+        label Скриті пошукові запити товару
+        div.field: div.ui.left.icon.input
+          textarea#opentags(rows="3"  name="opentags" placeholder="Відкрите тегування")
+      div.field
+        label Youtube посилання та категорії товару
+          div.field: div.ui.left.icon.input
+              i.video.icon
+              input#youtubelink(type="text" name="youtubelink" placeholder="Посилання на Youtube відео")
+      include imageuploader.jade
+
+      div#updateItemForm.ui.submit.fluid.button.green оновити позицію

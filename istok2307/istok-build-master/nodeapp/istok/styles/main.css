@@ -1,0 +1,147 @@
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.drag {
+  border: 5px solid red;
+  z-index: 1000;
+}
+.UppyDragDrop-One {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.outlined{
+  border: 1px solid rgba(34,36,38,.15) !important;
+}
+#dropTarget{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+#imageContainer{
+  min-height: 130px;
+  min-width: 120px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 9;
+}
+#imageContainer .ui .small{
+  margin: 5px;
+}
+
+#imageContainer .imageselected{
+  background-color: limegreen;
+}
+
+#imageContainer .preimage{
+  z-index: 11;
+}
+
+.imagePreShow{
+  width: 120px;
+  height: auto;
+}
+#authDimmer.ui.dimmer {
+  position: fixed!important;
+}
+.itemrowimage{
+  width: 100%;
+  position: relative;
+}
+.itemrowimage .image{
+  width:100%!important;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.itemrowimage .zoompanel{
+  z-index: 10;
+  opacity: 0.05;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+}
+.itemrowimage .zoompanel:hover{
+  opacity: 0.1;
+}
+
+.imageholder{
+  padding: 3px;
+  margin: 3px;
+  width: 350px!important;
+  position: relative;
+}
+.imageholder .image{
+  width:100%!important;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.imageholder .trashicon{
+  z-index: 10;
+  opacity: 0.05;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.imageContainerholder{
+  width: 100%;
+  position: relative;
+}
+
+.imageContainerholder .imageHolderLabel{
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  opacity: 0.3;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.columnstock {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.stockrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rightFloatButton{
+  position: fixed;
+  bottom: 25px!important;
+  right: 25px!important;
+  z-index: 1000;
+}
+
+.ui.modal .scrolling.content {
+  max-height: calc(70vh) !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+}
+
+.itemPriceHolder{ 
+  position: absolute;
+  right: 13px;
+  top: 5px;
+  z-index: 9;
+}
+
+.ui.selection.dropdown.active, .ui.selection.dropdown{
+  z-index: 12 !important;
+}

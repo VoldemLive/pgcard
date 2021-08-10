@@ -1,4 +1,4 @@
-package com.example.mapp
+package com.artbit.IdToy
 
 import io.flutter.embedding.android.FlutterActivity
 

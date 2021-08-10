@@ -1,0 +1,51 @@
+.container{
+  height: 100%;
+  z-index: 8;
+}
+
+.columnprice {
+  float: right;
+  color: green;
+  font-size: 1.3em;
+  width: 50%;
+}
+
+#buttonSearchByArt{
+  margin-top: 5px;
+  height: 35px;
+}
+
+#headerCashDesk{
+  margin-top: 5px;
+}
+
+#getItemByData{
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 0;
+  left:50%;
+  width: 90%;
+  transform: translate(-50%, -15%);
+  z-index: 10;
+}
+
+#messageHolder{
+  font-size: 1.2em;
+  position: fixed;
+  width: 90%;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+html.ios,
+html.ios body {
+  height: initial !important;
+}

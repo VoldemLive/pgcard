@@ -1,0 +1,73 @@
+const b24 = require('b24');
+var apidb = require('./apiqueries');
+
+const bitrix24 = new b24.Bitrix24({
+  config: {
+    mode: "webhook",
+    host: "https://masyanya.bitrix24.ua",
+    user_id: "1",
+    code: "2h5ev6v3h7xxe2cv"
+  }
+})
+
+// Get all Bitrix24 User
+async function btGetItems(req, res) {
+  try {
+    const result = await bitrix24.callMethod('user.get');
+    return res.status(200).json(result);
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+}
+
+async function inserAllItems(req, res) {
+  let completeData = null;
+  try {
+    await apidb.db.any('SELECT * FROM catalog limit 1')
+      .then(function(data) {
+        completeData = data;
+      })
+      .catch(function(err) {
+        console.log('server error ' + err);
+        return res.status(500);
+      });
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json({
+      message: "Internal Server Error"
+    });
+  }
+  if (completeData) {
+    console.log('data quantity is ' + completeData.length);
+    let allCommands = [];
+    for (let i = 0; i < completeData.length; i++) {
+      let fields = {
+        "NAME": completeData[i].ourname,
+        "PRICE": completeData[i].priceoutuah,
+        "CURRENCY_ID": "UAH",
+        "PROPERTY_112": completeData[i].ourarticul
+      };
+      //allCommands.push(['crm.product.add', fields]);
+      const result = await bitrix24.callMethod('crm.product.add', fields)
+        .then(function(answer) {
+          return res.status(200);
+        })
+        .catch(function(err) {
+          console.log(err);
+          return res.status(400);
+        });
+    }
+  }
+}
+
+/////////////
+// Exports
+/////////////
+
+module.exports = {
+  btGetItems: btGetItems,
+  btInserAllItems: inserAllItems
+};
